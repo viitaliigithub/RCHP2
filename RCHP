@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RCHP</title>
+    <style>
+        /* Ваші стилі тут */
+    </style>
+</head>
+
+<body>
+    <!-- Розділ для пошуку силок -->
+    <div>
+        <label for="searchInput"></label>
+        <input type="text" id="searchInput" oninput="searchLinks()" placeholder="">
+    </div>
+
+    <!-- Список силок -->
+    <ul id="linkList">
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0105907377306139152407311023194510&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">260623 BULKA PORANNA 65 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0105907377309659152404301023091525&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">307438 BULKA POZNANSKA 75G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0105901752109186152407311023191510&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">312423 BULKA GRAHAMKA 70G.</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0105901752109186152405311023134510&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">312423 BULKA GRAHAMKA 70G.</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0105901752109186152407311023184510&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">312423 BULKA GRAHAMKA 70G.</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010590205401393515240312103000095922&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">295600 BULKA CODZIENNA 100G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010590205401409315240713103000102263&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">295605 CIABATTA 80 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010590205401409315240511103000098990&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">295605 CIABATTA 80 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=01059063954312121524010810240108&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">296956 BULKA PORANNA FITNESS 80G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0105907489680271152407311023187509&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">367011 BULKA WROCLAWSKA Z MAKIEM 65G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0105907489680271152404301023096509&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">367011 BULKA WROCLAWSKA Z MAKIEM 65G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010208149911524070910230709&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">367789 BULKA 100 % Z MAKI  ZYTNIEJ  55 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010208149911524020710230207&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">367789 BULKA 100 % Z MAKI  ZYTNIEJ  55 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010208825321524070510230705&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">427916 BIO BULKA Z CHIA I ZLOT.SIEMIENIEM 75 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010208825321523110810221108&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">427916 BIO BULKA Z CHIA I ZLOT.SIEMIENIEM 75 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010590737730163915240111100010776708&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">211446 BAGIETKA CZOSNKOWA  165G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=BRAK KODU1523122010201220231&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">422396 DROZDZOWKA Z BUDYNIEM 120 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0105901486011878152403311031032024&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">324496 BULKA CZTERY PORY ROKU 70 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0105901486011878152312261026122023&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">324496 BULKA CZTERY PORY ROKU 70 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010590205401243315240629103000101379&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">428631 BAGIETKA DUZA 405 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010590205401243315240630103000101378&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">428631 BAGIETKA DUZA 405 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010590205402233315240629103000101379&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">428631 BAGIETKA DUZA 405 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010590205402233315240630103000101378&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">428631 BAGIETKA DUZA 405 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010590737730958115240621103000100971&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">272223 BULKA PARYSKA 240G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010590737730958115240417103000097382&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">272223 BULKA PARYSKA 240G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0105902054014482152407311023182523&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">298987 POLBAGIETKA 110 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0105902054014482152404301023091523&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">298987 POLBAGIETKA 110 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0102087692015240711103000101893&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">422401 BAGIETKA Z MAKA GRYCZANA 265 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010590205402213515240711103000101893&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">422401 BAGIETKA Z MAKA GRYCZANA 265 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010590175210870715240417109041&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">275221 BULKA ORKISZOWA Z ZIARNAMI 80 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=01059082300214281523121310221213&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">300331 BIO BULKA Z DYNIA 70G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=01059075122004451524010410040120241&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">300877 BULKA Z SEREM ZOLTYM 70G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=01059033573592181524010310030120241&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">404181 CIACHO Z KRUSZONKA 250 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010208913671524030110LM071&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">436345 ROGAL WYBORNY 100 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=01059001685108901524040410040420241&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">385977 CHALKA RECZNIE ZAWIJANA Z KRUSZONKA 320G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=01059013720006101524020110LL011&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">323230 BAGIETKA 2AB Z PRADAWNEJ ODM.PSZEN. 200G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0105901486007284152307171017072023&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">428639 CHLEB ZYTNI100% BEZ DODATKU DROZDZY 450G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0105901486007284152404041004042024&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">428639 CHLEB ZYTNI100% BEZ DODATKU DROZDZY 450G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0105901486012141152307171017072023&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">428639 CHLEB ZYTNI100% BEZ DODATKU DROZDZY 480G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0105901486012141152404041004042024&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">428639 CHLEB ZYTNI100% BEZ DODATKU DROZDZY 480G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010590205401294515240108103000091449&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">282874 CHLEB CALE ZIARNO 300G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010590205401294515240620103000100929&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">282874 CHLEB CALE ZIARNO 300G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010590205401294515240620103000100932&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">282874 CHLEB CALE ZIARNO 300G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010590205401849715240115103000092438&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">362926 CHLEB FITNESS 410G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010590205401849715240713103000101892&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">362926 CHLEB FITNESS 410G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=01059003400116891523110610061120233&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">379246 CHLEB SNIADANIOWY 500 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=01059003400116891524032710270320243&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">379246 CHLEB SNIADANIOWY 500 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010208835911523120510221205&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">428539 BIO CHLEB ZYTNI 100% Z PL. ZYTNIMI 450 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010590205401026215240129103000092867&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">238583 CHLEB SLOWIANSKI 380G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010590205401026215240704103000101741&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">238583 CHLEB SLOWIANSKI 380G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0105907377308379152405311023130521&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">287473 CHLEB RODZINNY 410G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0105907377308379152407311023188521&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">287473 CHLEB RODZINNY 410G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0105907377308379152406301023179521&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">287473 CHLEB RODZINNY 410G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010208951121524022010230220&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">428409 CHLEB MULTI ZIARNO 335 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010208951121524071110230711&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">428409 CHLEB MULTI ZIARNO 335 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=01059082300222031524022010230220&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">428409 CHLEB MULTI ZIARNO 350 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=01059082300222031524071110230711&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">428409 CHLEB MULTI ZIARNO 350 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010590205400144415231003103000086484&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">211456 CHLEB SLONECZNIKOWY 480G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010590205400144415240610103000099994&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">211456 CHLEB SLONECZNIKOWY 480G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=01059075122007421523110110011120232&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">351916 CHLEB Z KOSZYCZKA 450 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=01059075122007421524040510050420242&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">351916 CHLEB Z KOSZYCZKA 450 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0105907489681421152402291023039521&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">367012 CHLEB NOWODWORSKI Z MASL. I MAKIEM 450 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0105907489681421152407311023182521&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">367012 CHLEB NOWODWORSKI Z MASL. I MAKIEM 450 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0105907489681421152407311023189521&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">367012 CHLEB NOWODWORSKI Z MASL. I MAKIEM 450 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=01059082300214351523112310221123&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">389783 CHLEB Z SUSZ.POMIDORAMI I OLIWKAMI 350 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=01059082300214351524070610230706&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">389783 CHLEB Z SUSZ.POMIDORAMI I OLIWKAMI 350 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=01059082300219921523112310221123&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">389783 CHLEB Z SUSZ.POMIDORAMI I OLIWKAMI 370 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=01059082300219921524070610230706&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">389783 CHLEB Z SUSZ.POMIDORAMI I OLIWKAMI 370 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0102086491015231006100010815899&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">410821 ROZEK Z JABLKIEM 95 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0102086491015240209100010992292&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">410821 ROZEK Z JABLKIEM 95 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010590418242150715231006100010815899&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">410821 ROZEK Z JABLKIEM 95 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010590418242150715240209100010992292&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">410821 ROZEK Z JABLKIEM 95 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010590737730075515231025103000092898&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">260233 CIASTKO DUET TRUSKAWKOWY 94 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010590737730075515240324103000101673&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">260233 CIASTKO DUET TRUSKAWKOWY 94 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010590205401030915231205103000094841&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">240547 CIASTKO Z MORELA I SEREM 90G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0103419280060586152401251023030411&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">362256 ROGALIK CROISSANT 60G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=01020893736152406301092533164&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">437678 WARKOCZ KLONOWY 86 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0105413476307927152406301092533164&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">437678 WARKOCZ KLONOWY</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=01034192800424071524010210IX10710504&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">293449 CROISSANT Z NADZIENIEM ORZECH-KAKAO 85 g</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010590205401851015240105103000096601&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">240546 CIASTKO DUET Z OWOCAMI LESNYMI 115G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=01059041824209371523062110210623 9004 9020&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">276663 MINI PASZTECIK Z PIECZAR. I KAPUSTA 40G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=01085860173392171523091410140923 9008 9015&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">286595 HOT DOG Z BERLINKA I SOSEM 120G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=010403790810207515230912100010861727&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">263303 CIASTKO Z POMIDORAMI I MOZZARELLA 105 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0108681573031831152401311023031904&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">426909 TUBECKI BOREK ZE SZPINAKIEM I SEREM</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0108586017338746152402021002022024L&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">263484 PIZZA Z SALAMI 130 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0108586017338746152406141014062024P&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">263484 PIZZA Z SALAMI 130 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0108586017338524152402111011022024L&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">383871 ZAPIEKAN.PIECZARKA/SER/KETCH/SZYNK 150 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0108586017338524152406221022062024P&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">383871 ZAPIEKAN.PIECZARKA/SER/KETCH/SZYNK 150 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0108586017331822152403021002032024L&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">436239 PRZEKASKA KURCZAK CURRY 95 G  </a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0108586017338753152401111011012024L&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">358066 PIZZA Z KURCZAKIEM I GRILL. WARZ. 140G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0108586017338470152401241024012024P&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">386971 ZAPIEKANKA Z WARZY.GRILL.SOS I SER 100 G</a></li>
+        <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0108586017338470152406191019062024P&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">386971 ZAPIEKANKA Z WARZY.GRILL.SOS I SER 100 G</a></li>
+        <!-- Додайте більше силок, які ви хочете шукати -->
+    </ul>
+</body>
+<script>
+    function searchLinks() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const linkList = document.getElementById('linkList').getElementsByTagName('a');
+
+        for (let i = 0; i < linkList.length; i++) {
+            const linkText = linkList[i].innerText.toLowerCase();
+            if (linkText.includes(input)) {
+                linkList[i].parentNode.style.display = 'block';
+            } else {
+                linkList[i].parentNode.style.display = 'none';
+            }
+        }
+    }
+</script>
