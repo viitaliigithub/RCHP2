@@ -112,6 +112,7 @@
         <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0108586017338470152406191019062024P&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5">386971 ZAPIEKANKA Z WARZY.GRILL.SOS I SER 100 G</a></li>
         <!-- Додайте більше силок, які ви хочете шукати -->
     </ul>
+
 </body>
 <script>
     function searchLinks() {
