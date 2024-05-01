@@ -3,44 +3,121 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Открытие и закрытие картинки при нажатии на ссылку</title>
+<title>Мульти-страничный HTML с геолокацией и зашифрованным паролем</title>
 <style>
-    /* Стили для скрытия картинки по умолчанию */
-    .hidden {
+    .page {
         display: none;
+    }
+    .page.active {
+        display: block;
     }
 </style>
 </head>
 <body>
 
-<!-- Ссылка -->
-<a href="#" id="link">Нажми меня</a>
+<!-- Страница 1 -->
+<div class="page" id="page1">
+    <h1>Страница 1</h1>
+    <p>Введите пароль:</p>
+    <input type="password" id="passwordInput">
+    <button onclick="checkPassword()">Войти</button>
+</div>
 
-<!-- Картинка (изначально скрыта) -->
-<img src="#" id="image" class="hidden">
+<!-- Страница 2 -->
+<div class="page" id="page2">
+    <h1>Страница 2</h1>
+    <p>Вы находитесь в радиусе 1 км от указанной геолокации.</p>
+</div>
 
-<!-- JavaScript для открытия и закрытия картинки при нажатии на ссылку -->
 <script>
-    // Найти ссылку и картинку по их id
-    const link = document.getElementById('link');
-    const image = document.getElementById('image');
-
-    // При нажатии на ссылку
-    link.addEventListener('click', function(event) {
-        // Отменить действие по умолчанию (переход по ссылке)
-        event.preventDefault();
-        // Если картинка скрыта, то показать её
-        if (image.classList.contains('hidden')) {
-            // Установить атрибут src картинки
-            image.src = 'https://barcode.tec-it.com/barcode.ashx?data=0105907377306139152502281024053512&code=Code128&translate-esc=true&qunit=Mm&quiet=5';
-            // Показать картинку
-            image.classList.remove('hidden');
-            link.textContent = 'Закрыть картинку'; // Изменяем текст ссылки
-        } else { // Если картинка уже открыта, то скрыть её
-            image.classList.add('hidden');
-            link.textContent = 'Нажми меня'; // Возвращаем текст ссылки к изначальному
+    // Функция для простого шифрования пароля
+    function encryptPassword(password) {
+        var encryptedPassword = '';
+        for (var i = 0; i < password.length; i++) {
+            encryptedPassword += String.fromCharCode(password.charCodeAt(i) + 1); // Простое смещение символов на один шаг вперед
         }
-    });
+        return encryptedPassword;
+    }
+
+    // Функция для дешифрования пароля
+    function decryptPassword(encryptedPassword) {
+        var password = '';
+        for (var i = 0; i < encryptedPassword.length; i++) {
+            password += String.fromCharCode(encryptedPassword.charCodeAt(i) - 1); // Простое смещение символов на один шаг назад
+        }
+        return password;
+    }
+
+    function showPage(pageNumber) {
+        // Скрыть все страницы
+        var pages = document.querySelectorAll('.page');
+        pages.forEach(function(page) {
+            page.classList.remove('active');
+        });
+        
+        // Показать выбранную страницу
+        var selectedPage = document.getElementById('page' + pageNumber);
+        if (selectedPage) {
+            selectedPage.classList.add('active');
+        }
+    }
+
+    // Функция для определения геолокации
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(checkLocation, showPasswordPage);
+        } else {
+            showPasswordPage(); // Переходим к вводу пароля, если геолокация не поддерживается
+        }
+    }
+
+    // Функция для проверки геолокации
+    function checkLocation(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        var distance = calculateDistance(latitude, longitude, 53.2028421, 20.8990773);
+        if (distance <= 1) {
+            showPage(2); // Переключаемся на вторую страницу, если пользователь в радиусе 1 км от указанной геолокации
+        } else {
+            showPasswordPage(); // Переходим к вводу пароля, если пользователь не в радиусе 1 км от указанной геолокации
+        }
+    }
+
+    // Функция для показа страницы ввода пароля
+    function showPasswordPage() {
+        showPage(1);
+    }
+
+    // Функция для вычисления расстояния между двумя точками на земной поверхности (примерное расстояние в километрах)
+    function calculateDistance(lat1, lon1, lat2, lon2) {
+        var R = 6371; // Радиус Земли в километрах
+        var dLat = deg2rad(lat2 - lat1);
+        var dLon = deg2rad(lon2 - lon1);
+        var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
+                Math.sin(dLon / 2) * Math.sin(dLon / 2);
+        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        var d = R * c; // Расстояние в километрах
+        return d;
+    }
+
+    function deg2rad(deg) {
+        return deg * (Math.PI / 180);
+    }
+
+    // Функция для проверки пароля
+    function checkPassword() {
+        var passwordInput = document.getElementById('passwordInput').value;
+        var encryptedPassword = encryptPassword(passwordInput);
+        if (encryptedPassword === '73319739') { // Зашифрованный пароль
+            showPage(2); // Переключаемся на вторую страницу, если пароль верный
+        } else {
+            alert('Неверный пароль!');
+        }
+    }
+
+    // Проверяем геолокацию при загрузке страницы
+    getLocation();
 </script>
 
 </body>
