@@ -75,7 +75,7 @@
     function checkLocation(position) {
         var latitude = position.coords.latitude;
         var longitude = position.coords.longitude;
-        var distance = calculateDistance(latitude, longitude, 53.2028421, 20.8990773);
+        var distance = calculateDistance(latitude, longitude, 52.2028421, 20.8990773);
         if (distance <= 1) {
             showPage(2); // Переключаемся на вторую страницу, если пользователь в радиусе 1 км от указанной геолокации
         } else {
