@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RCHP 2024.05.01 064507</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RCHP 2024.04.30 091555</title>
 <style>
     body, ul, li {
         margin: 1px;
@@ -20,40 +20,22 @@
     }
         #searchInput {
             margin-bottom: 10px;
-            width: 99%; /* Увеличенная ширина поля поиска */
+            width: 100%; /* Увеличенная ширина поля поиска */
             padding: 2px; /* Добавленный отступ для улучшенного внешнего вида */
             font-size: 16px; /* Измененный размер шрифта для лучшей читаемости */
         }
-
-    .page {
-        display: none;
-    }
-    .page.active {
-        display: block;
-    }
-    #passwordInput {
-        margin-bottom: 10px;
-        width: 99%;
-        padding: 2px;
-        font-size: 16px;
-    }
 </style>
+
+
 </head>
+
 <body>
-
-<!-- Страница 1 -->
-<div class="page" id="page1">
-    <p id="currentLocation"></p>
-    <input type="password" id="passwordInput">
-    <button onclick="checkPassword()">Enter</button>
-</div>
-
-<!-- Страница 2 -->
-<div class="page" id="page2">
+    <div>
         <label for="searchInput"></label>
         <input type="text" id="searchInput" placeholder="">
-    <ul id="linkList">
+    </div>
 
+    <ul id="linkList">
 
 <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0105907377306139152502281024053512&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5" onclick="showImage(event, 'image260623')">260623 BULKA PORANNA 65 G</a></li><img id="image260623" class="hidden" src="">
 <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0105901752109186152502281024049523&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5" onclick="showImage(event, 'image312423')">312423 BULKA GRAHAMKA 70G.</a></li><img id="image312423" class="hidden" src="">
@@ -122,106 +104,6 @@
 <li><a href="https://barcode.tec-it.com/barcode.ashx?data=0108586017338753152409071007092024P&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5" onclick="showImage(event, 'image358066')">358066 PIZZA Z KURCZAKIEM I GRILL. WARZ. 140G</a></li><img id="image358066" class="hidden" src="">
 <li><a href="https://barcode.tec-it.com/barcode.ashx?data=01032918101047751525091910IS10123664&amp;code=Code128&amp;translate-esc=true&amp;qunit=Mm&amp;quiet=5" onclick="showImage(event, 'image475616')">475616 KOSZYCZEK Z WARZYWAMI I SEREM EMENT</a></li><img id="image475616" class="hidden" src="">
     </ul>
-
-</div>
-
-<script>
-    // Функция для простого шифрования пароля
-    function encryptPassword(password) {
-        var encryptedPassword = '';
-        for (var i = 0; i < password.length; i++) {
-            encryptedPassword += String.fromCharCode(password.charCodeAt(i) + 1); // Простое смещение символов на один шаг вперед
-        }
-        return encryptedPassword;
-    }
-
-    // Функция для дешифрования пароля
-    function decryptPassword(encryptedPassword) {
-        var password = '';
-        for (var i = 0; i < encryptedPassword.length; i++) {
-            password += String.fromCharCode(encryptedPassword.charCodeAt(i) - 1); // Простое смещение символов на один шаг назад
-        }
-        return password;
-    }
-
-    function showPage(pageNumber) {
-        // Скрыть все страницы
-        var pages = document.querySelectorAll('.page');
-        pages.forEach(function(page) {
-            page.classList.remove('active');
-        });
-        
-        // Показать выбранную страницу
-        var selectedPage = document.getElementById('page' + pageNumber);
-        if (selectedPage) {
-            selectedPage.classList.add('active');
-        }
-    }
-
-    // Функция для определения геолокации
-    function getLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(checkLocation, showPasswordPage);
-        } else {
-            showPasswordPage(); // Переходим к вводу пароля, если геолокация не поддерживается
-        }
-    }
-
-    // Функция для проверки геолокации
-    function checkLocation(position) {
-        var latitude = position.coords.latitude;
-        var longitude = position.coords.longitude;
-        var distance = calculateDistance(latitude, longitude, 52.2474565, 20.8437659);
-        if (distance <= 1) {
-            showPage(2); // Переключаемся на вторую страницу, если пользователь в радиусе 1 км от указанной геолокации
-        } else {
-            showPasswordPage(); // Переходим к вводу пароля, если пользователь не в радиусе 1 км от указанной геолокации
-        }
-
-        // Отображаем текущую геолокацию
-        var currentLocationElement = document.getElementById('currentLocation');
-        if (currentLocationElement) {
-            currentLocationElement.textContent = '' + latitude + ', ' + longitude;
-        }
-    }
-
-    // Функция для показа страницы ввода пароля
-    function showPasswordPage() {
-        showPage(1);
-    }
-
-    // Функция для вычисления расстояния между двумя точками на земной поверхности (примерное расстояние в километрах)
-    function calculateDistance(lat1, lon1, lat2, lon2) {
-        var R = 6371; // Радиус Земли в километрах
-        var dLat = deg2rad(lat2 - lat1);
-        var dLon = deg2rad(lon2 - lon1);
-        var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-                Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
-                Math.sin(dLon / 2) * Math.sin(dLon / 2);
-        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-        var d = R * c; // Расстояние в километрах
-        return d;
-    }
-
-    function deg2rad(deg) {
-        return deg * (Math.PI / 180);
-    }
-
-    // Функция для проверки пароля
-function checkPassword() {
-    var passwordInput = document.getElementById('passwordInput').value;
-    var encryptedPassword = encryptPassword(passwordInput);
-    if (encryptedPassword === '73319739') { // Зашифрованный пароль
-        showPage(2); // Переключаемся на вторую страницу, если пароль верный
-    } else {
-        alert('Invalid password!');
-    }
-}
-
-    // Проверяем геолокацию при загрузке страницы
-    getLocation();
-</script>
-
 </body>
 <script>
     var currentImageId = null;
@@ -276,5 +158,3 @@ function checkPassword() {
             });
         });
     </script>
-
-</html>
