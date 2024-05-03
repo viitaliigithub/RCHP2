@@ -4,17 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Проверка пароля</title>
-    <script>
-        function hashPassword(password) {
-            // Пример простого хеширования (MD5)
-            // В реальных приложениях лучше использовать более безопасные алгоритмы хеширования
-            return md5(password); // Это можно использовать только в примерных целях
-        }
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script> <!-- Подключаем библиотеку CryptoJS -->
 </head>
 <body>
     <h1>Введите пароль для доступа к информации</h1>
-    <form action="second.html" method="post" onsubmit="hashPasswordInput()">
+    <form onsubmit="encryptPassword()" action="second.html" method="post">
         <label for="password">Пароль:</label>
         <input type="password" id="password" name="password" required>
         <input type="hidden" id="hashed_password" name="hashed_password">
@@ -22,12 +16,11 @@
     </form>
 
     <script>
-        function hashPasswordInput() {
+        function encryptPassword() {
             var password = document.getElementById("password").value;
-            var hashedPassword = hashPassword(password);
+            var hashedPassword = CryptoJS.SHA256(password).toString(); // Хешируем пароль
             document.getElementById("hashed_password").value = hashedPassword;
         }
     </script>
-    <script src="md5.js"></script> <!-- Здесь должна быть подключена библиотека для хеширования -->
 </body>
 </html>
