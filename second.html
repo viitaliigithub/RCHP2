@@ -3,13 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Второй HTML файл</title>
+    <title>Защищенная информация</title>
 </head>
 <body>
-    <h1>Привет, это второй HTML файл!</h1>
-    <p>Нажмите на кнопку, чтобы перейти на первый HTML файл.</p>
-    <form action="index.html">
-        <button type="submit">Перейти на первый файл</button>
-    </form>
+    <h1>Это защищенная информация</h1>
+    <p>Только авторизованным пользователям разрешен доступ к этой информации.</p>
+
+    <script>
+        window.onload = function() {
+            var hashedPassword = prompt("Введите пароль для доступа к информации:");
+            var inputHashedPassword = document.getElementById("hashed_password").value;
+
+            // Проверяем, если пароль не совпадает или не введен, перенаправляем обратно на первую страницу
+            if (hashedPassword !== inputHashedPassword) {
+                alert("Неправильный пароль. Доступ запрещен.");
+                window.location.href = "index.html";
+            }
+        }
+    </script>
 </body>
 </html>
