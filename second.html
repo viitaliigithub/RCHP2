@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Защищенная информация</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script> <!-- Подключаем библиотеку CryptoJS -->
 </head>
 <body>
     <h1>Это защищенная информация</h1>
@@ -12,10 +13,10 @@
     <script>
         window.onload = function() {
             var hashedPassword = prompt("Введите пароль для доступа к информации:");
-            var inputHashedPassword = document.getElementById("hashed_password").value;
+            var storedHashedPassword = "9a00d843b27bfa79f6efeffdfecad049e6eb45d0f6f4d9e4244a162ee426bd23"; // Здесь хранится хеш пароля
 
             // Проверяем, если пароль не совпадает или не введен, перенаправляем обратно на первую страницу
-            if (hashedPassword !== inputHashedPassword) {
+            if (hashedPassword === null || CryptoJS.SHA256(hashedPassword).toString() !== storedHashedPassword) {
                 alert("Неправильный пароль. Доступ запрещен.");
                 window.location.href = "index.html";
             }
