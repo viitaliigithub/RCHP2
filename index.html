@@ -3,13 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Первый HTML файл</title>
+    <title>Проверка пароля</title>
+    <script>
+        function hashPassword(password) {
+            // Пример простого хеширования (MD5)
+            // В реальных приложениях лучше использовать более безопасные алгоритмы хеширования
+            return md5(password); // Это можно использовать только в примерных целях
+        }
+    </script>
 </head>
 <body>
-    <h1>Привет, это первый HTML файл!</h1>
-    <p>Нажмите на кнопку, чтобы перейти на второй HTML файл.</p>
-    <form action="second.html">
-        <button type="submit">Перейти на второй файл</button>
+    <h1>Введите пароль для доступа к информации</h1>
+    <form action="second.html" method="post" onsubmit="hashPasswordInput()">
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" required>
+        <input type="hidden" id="hashed_password" name="hashed_password">
+        <button type="submit">Войти</button>
     </form>
+
+    <script>
+        function hashPasswordInput() {
+            var password = document.getElementById("password").value;
+            var hashedPassword = hashPassword(password);
+            document.getElementById("hashed_password").value = hashedPassword;
+        }
+    </script>
+    <script src="md5.js"></script> <!-- Здесь должна быть подключена библиотека для хеширования -->
 </body>
 </html>
